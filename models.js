@@ -14,19 +14,38 @@ const user_schema = new schema(
             type: String,
             default: 'user',
         },
-        project: {
+        role: {
+            type: String,
+            default: '',
+        },
+        direct: {
+            type: String,
+            default: '',
+        },
+        discr: {
+            type: String,
+            default: '',
+        },
+        projects: {
             type: Array,
             default: [],
         },
         klass: {
             type: String,
             default: 'no',
-        }
+        },
+        ban: {
+            type: String,
+            default: 'no',
+        },
 
-
+    },
+    {
+        autoIndex: true,
+        timestamps: true,
     }
 )
-const project = new mongo.Schema(
+const project_schema = new mongo.Schema(
     {
         id: {
             type: String,
@@ -35,6 +54,10 @@ const project = new mongo.Schema(
         name: {
             type: String,
             default: 'no',
+        },
+        creator: {
+            type: String,
+            default: 'no'
         },
         curator: {
             type: String,
@@ -47,7 +70,18 @@ const project = new mongo.Schema(
         stage: {
             type: String,
             default: 'new'
+        },
+        discr: {
+            type: String,
+            default: ''
         }
 
+    },
+    {
+        autoIndex: true,
+        timestamps: true,
     }
 )
+
+mongo.model('users',user_schema)
+mongo.model('projects', project_schema)

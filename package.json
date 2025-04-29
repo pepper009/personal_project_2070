@@ -4,7 +4,8 @@
   "description": "Bot for management of personal projects",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Michael Romanov",
   "license": "ISC",
@@ -14,6 +15,10 @@
     "node-telegram-bot-api": "^0.66.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@eslint/json": "^0.12.0",
+    "eslint": "^9.25.1",
+    "globals": "^16.0.0",
     "nodemon": "^3.1.7"
   }
 }

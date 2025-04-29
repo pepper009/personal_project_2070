@@ -4,7 +4,7 @@ module.exports = {
             keyboard: [
                 [{ text: 'Куратор' },{ text: 'Ученик' }],
                 // [{ text: 'Ученик' }],
-                [{ text: 'Администратор' }],
+                // [{ text: 'Администратор' }],
             ]
         })
     },
@@ -52,10 +52,34 @@ module.exports = {
     UCHENIK_PROJ: {
         reply_markup: JSON.stringify({
             keyboard: [
-                [{ text: 'Создать проект' }],
                 [{text: 'Мои проекты'}],
                 [{text: 'Главное меню'}]
             ]
         })
-    }
+    },
+    ADMIN_AGR: {
+        reply_markup: JSON.stringify({
+            inline_keyboard: [
+                [{ text: 'Принять', callback_data: 'accept' },{ text: 'Отклонить', callback_data: 'decline' }],
+            ]
+        })
+    },
+    REG: {
+            inline_keyboard: [
+                [{ text: 'Да', callback_data: 'accept' },{ text: 'Отмена', callback_data: 'cancel' } ],
+            ]
+    },
+    REMOVE_KBT: {
+        remove_keyboard: true
+    },
+    KURATOR_DIR: {
+        reply_markup: JSON.stringify({
+            keyboard: [
+                [{ text: 'Технический' }],
+                [{text: 'Гуманитарный'}],
+
+            ]
+        })
+    },
+    
 }
